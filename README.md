@@ -24,11 +24,11 @@ Customer service is separately maintained for API calls. And customer model use 
 I used MS SQL database and stored procedure back end program.
 
 #### Installation
-•	Download the files from the Link - https://github.com/pasindumadushan/CustomerRegistrationApp.git
-•	Run sql script in the database folder
-•	Run CustomerRegistrationWebAPI 
-•	npm install to my-angular-app
-•	Run my-angular-app
+•	Download the files from the Link - https://github.com/pasindumadushan/CustomerRegistrationApp.git <br/>
+•	Run sql script in the database folder <br/>
+•	Run CustomerRegistrationWebAPI <br/>
+•	npm install to my-angular-app <br/>
+•	Run my-angular-app <br/>
 
 #### Customer List
 ![](https://github.com/pasindumadushan/CustomerRegistrationApp/blob/main/Customer%20Registration%20App%20Images/CustomerList.JPG)
