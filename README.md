@@ -19,7 +19,8 @@ Parameter comes from controller to repositories by using properties of request m
 Front End architecture
 For front end development I used angular 13. It has a component base architecture. I used 3 separate folder for customer-details, customer-table, add-customer. Components are exist inside those folders.
 Customer service is separately maintained for API calls. And customer model use to store customer properties.
-MS SQL
+
+####MS SQL
 I used MS SQL database and stored procedure back end program.
 
 #### Installation
