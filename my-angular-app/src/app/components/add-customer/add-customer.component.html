@@ -1,0 +1,60 @@
+<mat-card>
+  <div>
+    <h4>Add Customer</h4>
+
+
+    <div class="submit-form">
+      <form [formGroup]="registerForm" (ngSubmit)="saveCustomer()">
+        <!-- <div *ngIf="!submitted"> -->
+        <div class="form-group">
+          <label for="customerName">Name</label>
+          <input type="text" class="form-control" id="customerName" formControlName="customerName"
+            [(ngModel)]="customer.customerName" [ngClass]="{ 'is-invalid': submitted && f.customerName.errors }"
+            name="customerName" />
+          <div *ngIf="submitted && f.customerName.errors" class="invalid-feedback">
+            <div *ngIf="f.customerName.errors.required"> Name is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="customerPNum">Phone Number</label>
+          <input type="text" class="form-control" id="customerPNum" formControlName="customerPNum"
+            [(ngModel)]="customer.customerPNum" [ngClass]="{ 'is-invalid': submitted && f.customerPNum.errors }"
+            name="customerPNum" />
+          <div *ngIf="submitted && f.customerPNum.errors" class="invalid-feedback">
+            <div *ngIf="f.customerPNum.errors.required">Phone numer is required</div>
+            <div *ngIf="f.customerPNum.errors.pattern">Invalid phone number</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="customerAddress">Address</label>
+          <input type="text" class="form-control" id="customerAddress" formControlName="customerAddress"
+            [(ngModel)]="customer.customerAddress" [ngClass]="{ 'is-invalid': submitted && f.customerAddress.errors }"
+            name="customerAddress" />
+          <div *ngIf="submitted && f.customerAddress.errors" class="invalid-feedback">
+            <div *ngIf="f.customerAddress.errors.required">Address is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="customerEmail">Email</label>
+          <input type="text" class="form-control" id="customerEmail" formControlName="customerEmail"
+            [(ngModel)]="customer.customerEmail" [ngClass]="{ 'is-invalid': submitted && f.customerEmail.errors }"
+            name="customerEmail" />
+          <div *ngIf="submitted && f.customerEmail.errors" class="invalid-feedback">
+            <div *ngIf="f.customerEmail.errors.required">Email is required</div>
+            <div *ngIf="f.customerEmail.errors.email">Email must be a valid email address</div>
+          </div>
+        </div>
+        <mat-card-actions>
+          <button mat-button type="submit">Save</button>
+        </mat-card-actions>
+
+        <!-- </div> -->
+      </form>
+      <!-- <div *ngIf="submitted">
+      <p>{{ message }}</p>
+      <button mat-raised-button color="primary" (click)="newCustomer()">Add New Customer</button>
+    </div> -->
+    </div>
+
+  </div>
+</mat-card>

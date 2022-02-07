@@ -1,0 +1,43 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by Name"
+          [(ngModel)]="customerName"
+        />
+        <div class="input-group-append">
+          <button
+          mat-raised-button color="basic"
+            type="button"
+            (click)="searchCustomerName()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <h4>List Of Customers</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let customer of customers; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveCustomer(customer, i)"
+        >
+          {{ customer.customerName }}
+        </li>
+      </ul>
+      <!-- <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+        Remove All
+      </button> -->
+    </div>
+    <div class="col-md-6">
+      <app-customer-details
+        [viewMode]="true"
+        [currentCustomer]="currentCustomer"
+      ></app-customer-details>
+    </div>
+  </div>

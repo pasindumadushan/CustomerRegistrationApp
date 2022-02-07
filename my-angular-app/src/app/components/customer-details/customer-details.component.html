@@ -1,0 +1,85 @@
+<mat-card>
+  <mat-card-title>Customer Information</mat-card-title>
+  <mat-card-content>
+    <div *ngIf="viewMode; else editable">
+      <div *ngIf="currentCustomer.customerId">
+        <div>
+          <label>Name:</label> {{ currentCustomer.customerName }}
+        </div>
+        <div>
+          <label>Phone Numer:</label>
+          {{ currentCustomer.customerPNum }}
+        </div>
+        <div>
+          <label>Address:</label>
+          {{ currentCustomer.customerAddress }}
+        </div>
+        <div>
+          <label>Email:</label>
+          {{ currentCustomer.customerEmail }}
+        </div>
+        <button mat-button routerLink="/Customers/{{ currentCustomer.customerId }}">Edit</button>
+      </div>
+      <!-- <div *ngIf="!currentCustomer">
+        <p>Please click on a Customer...</p>
+      </div> -->
+    </div>
+  </mat-card-content>
+</mat-card>
+<ng-template #editable>
+  <div *ngIf="currentCustomer.customerId" class="edit-form">
+    <h4>Edit Customer</h4>
+    <form [formGroup]="registerForm" (ngSubmit)="updateCustomer()">
+      <div class="form-group">
+        <label for="customerName">Name</label>
+        <input type="text" class="form-control" id="customerName" [(ngModel)]="currentCustomer.customerName"
+          formControlName="customerName" [ngClass]="{ 'is-invalid': submitted && f.customerName.errors }"
+          name="customerName" />
+        <div *ngIf="submitted && f.customerName.errors" class="invalid-feedback">
+          <div *ngIf="f.customerName.errors.required"> Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="customerPNum">Phone Number</label>
+        <input type="text" class="form-control" id="customerPNum" [(ngModel)]="currentCustomer.customerPNum"
+          formControlName="customerPNum" [ngClass]="{ 'is-invalid': submitted && f.customerPNum.errors }"
+          name="customerPNum" />
+        <div *ngIf="submitted && f.customerPNum.errors" class="invalid-feedback">
+          <div *ngIf="f.customerPNum.errors.required">Phone numer is required</div>
+          <div *ngIf="f.customerPNum.errors.pattern">Invalid phone number</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="customerAddress"> Address</label>
+        <input type="text" class="form-control" id="customerAddress" [(ngModel)]="currentCustomer.customerAddress"
+          formControlName="customerAddress" [ngClass]="{ 'is-invalid': submitted && f.customerAddress.errors }"
+          name="customerAddress" />
+        <div *ngIf="submitted && f.customerAddress.errors" class="invalid-feedback">
+          <div *ngIf="f.customerAddress.errors.required">Address is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="customerEmail">Email</label>
+        <input type="text" class="form-control" id="customerEmail" [(ngModel)]="currentCustomer.customerEmail"
+          formControlName="customerEmail" [ngClass]="{ 'is-invalid': submitted && f.customerEmail.errors }"
+          name="customerEmail" />
+        <div *ngIf="submitted && f.customerEmail.errors" class="invalid-feedback">
+          <div *ngIf="f.customerEmail.errors.required">Email is required</div>
+          <div *ngIf="f.customerEmail.errors.email">Email must be a valid email address</div>
+        </div>
+      </div>
+    </form>
+    <mat-card-actions>
+      <button mat-button (click)="deleteCustomer()">
+        Delete
+      </button>
+      <button type="submit" mat-button (click)="updateCustomer()">
+        Update
+      </button>
+    </mat-card-actions>
+  </div>
+  <div *ngIf="!currentCustomer.customerId">
+    <br />
+    <p>Cannot access this ...</p>
+  </div>
+</ng-template>
