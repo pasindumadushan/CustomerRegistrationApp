@@ -29,3 +29,23 @@ I used MS SQL database and stored procedure back end program.
 •	npm install to my-angular-app
 •	Run my-angular-app
 
+#### Customer List
+![](https://github.com/pasindumadushan/CustomerRegistrationApp/tree/main/Customer%20Registration%20App%20Images/CustomerList.JPG)
+
+#### Customer Details
+![](https://github.com/pasindumadushan/CustomerRegistrationApp/tree/main/Customer%20Registration%20App%20Images/CustomerListWithInfo.JPG)
+
+#### Edit
+![](https://github.com/pasindumadushan/CustomerRegistrationApp/tree/main/Customer%20Registration%20App%20Images/Edit.JPG)
+
+#### Edit Validation
+![](https://github.com/pasindumadushan/CustomerRegistrationApp/tree/main/Customer%20Registration%20App%20Images/EditValidation.JPG)
+
+#### Delete
+![](https://github.com/pasindumadushan/CustomerRegistrationApp/tree/main/Customer%20Registration%20App%20Images/Delete.JPG)
+
+#### Add New Customer
+![](https://github.com/pasindumadushan/CustomerRegistrationApp/tree/main/Customer%20Registration%20App%20Images/AddNew.JPG)
+
+#### Add Validations
+![](https://github.com/pasindumadushan/CustomerRegistrationApp/tree/main/Customer%20Registration%20App%20Images/AddNewValidation.JPG)
